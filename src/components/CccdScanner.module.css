@@ -1,0 +1,192 @@
+.scannerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.scannerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .scannerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--border-glow);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.uploadBox:hover {
+  border-color: var(--color-primary);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.uploadActive {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.uploadIcon {
+  font-size: 2.2rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
+.uploadBox:hover .uploadIcon {
+  color: var(--color-primary);
+}
+
+.uploadText {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.uploadSubtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.previewImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.previewOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.uploadBox:hover .previewOverlay {
+  opacity: 1;
+}
+
+.previewBtn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Progress bar styles */
+.progressSection {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid var(--border-glow-active);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.progressInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.statusText {
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.percentText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.barTrack {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--grad-primary);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Scan laser animation overlay */
+.laserScanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.laserBar {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, rgba(99, 102, 241, 0), rgba(99, 102, 241, 1), rgba(99, 102, 241, 0));
+  box-shadow: 0 0 15px 2px rgba(99, 102, 241, 0.8);
+  position: absolute;
+  top: 0;
+  animation: scanAnimation 2s linear infinite;
+}
+
+@keyframes scanAnimation {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}

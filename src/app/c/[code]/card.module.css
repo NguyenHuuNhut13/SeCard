@@ -1,0 +1,355 @@
+.cardPage {
+  min-height: 100vh;
+  background-color: #0b0f19;
+  color: #f3f4f6;
+  font-family: 'Inter', sans-serif;
+  padding: 0 0 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cardContainer {
+  width: 100%;
+  max-width: 480px;
+  background: #0f172a;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Banner & Avatar Header */
+.headerArea {
+  position: relative;
+  height: 200px;
+  margin-bottom: 75px;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.avatarWrapper {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #0f172a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: #1e293b;
+  overflow: hidden;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* User Info Section */
+.profileInfo {
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: 28px;
+}
+
+.fullName {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.position {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--theme-color, #6366f1);
+  margin-bottom: 2px;
+}
+
+.company {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.slogan {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #9ca3af;
+  line-height: 1.5;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Primary Action: Add to Contacts */
+.mainActions {
+  padding: 0 24px;
+  margin-bottom: 28px;
+}
+
+.btnSaveContact {
+  width: 100%;
+  background: var(--theme-color, #6366f1);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btnSaveContact:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.btnSaveContact:active {
+  transform: translateY(0);
+}
+
+/* Contact List Grid */
+.contactGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #e5e7eb;
+  transition: all 0.2s;
+}
+
+.contactItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.contactIcon {
+  color: var(--theme-color, #6366f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactLabel {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.contactVal {
+  font-size: 0.92rem;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* Social Media Row */
+.socialSection {
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 8px;
+}
+
+.socialRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.socialBtn:hover {
+  background: rgba(99, 102, 241, 0.08);
+  border-color: var(--theme-color, #6366f1);
+  transform: translateY(-2px);
+}
+
+/* Bank Accounts Section */
+.bankGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bankCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bankInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bankName {
+  font-size: 0.72rem;
+  color: var(--theme-color, #6366f1);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bankAccNumber {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.bankHolder {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btnCopy {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btnCopy:hover {
+  background: var(--theme-color, #6366f1);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Bio Info Section */
+.bioGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bioItem {
+  background: rgba(255, 255, 255, 0.01);
+  border-left: 3px solid var(--theme-color, #6366f1);
+  padding: 12px 16px;
+  border-radius: 0 12px 12px 0;
+}
+
+.bioLabel {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.bioContent {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #d1d5db;
+  white-space: pre-line;
+}
+
+/* Powered by Footer */
+.cardFooter {
+  margin-top: auto;
+  padding: 40px 24px 24px 24px;
+  text-align: center;
+}
+
+.footerBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footerBrand:hover {
+  color: var(--theme-color, #6366f1);
+}
+
+.errorState {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  gap: 16px;
+}
