@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   border: 2px dashed var(--border-glow);
-  background: rgba(0, 0, 0, 0.2);
+  /* bg */
   border-radius: 16px;
   padding: 24px;
   cursor: pointer;
@@ -35,7 +35,7 @@
 
 .uploadBox:hover {
   border-color: var(--color-primary);
-  background: rgba(99, 102, 241, 0.05);
+  /* bg */
 }
 
 .uploadActive {
@@ -97,7 +97,7 @@
 }
 
 .previewBtn {
-  background: rgba(255, 255, 255, 0.1);
+  /* bg */
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
@@ -112,7 +112,7 @@
 
 /* Progress bar styles */
 .progressSection {
-  background: rgba(99, 102, 241, 0.05);
+  /* bg */
   border: 1px solid var(--border-glow-active);
   border-radius: 12px;
   padding: 16px 20px;
@@ -145,7 +145,7 @@
 
 .barTrack {
   height: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  /* bg */
   border-radius: 4px;
   overflow: hidden;
 }
@@ -189,4 +189,37 @@
   100% {
     top: 0%;
   }
+}
+
+
+/* Light mode overrides */
+.uploadBox {
+  background: rgba(0, 0, 0, 0.02);
+}
+.uploadBox:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+.previewBtn {
+  background: rgba(255, 255, 255, 0.8);
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.barTrack {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode overrides */
+:global(.dark) .uploadBox {
+  background: rgba(0, 0, 0, 0.2);
+}
+:global(.dark) .uploadBox:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+:global(.dark) .previewBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+:global(.dark) .barTrack {
+  background: rgba(255, 255, 255, 0.05);
 }

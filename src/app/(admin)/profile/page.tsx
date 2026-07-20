@@ -326,18 +326,18 @@ export default function ProfilePage() {
       {!isEditing ? (
         <div className="space-y-6 animate-fade-in">
           
-          {/* CARD 1: MY PROFILE */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03] space-y-6 shadow-xs">
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
+            <div className="p-5 lg:p-6">
             
             {/* Card Header: Title + Edit Button */}
-            <div className="flex items-center justify-between border-b border-gray-100 dark:border-gray-800/60 pb-4">
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">My Profile</h3>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between mb-6">
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-white/90">My Profile</h4>
               <button
                 onClick={() => {
                   setActiveTab('personal');
                   setIsEditing(true);
                 }}
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer"
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200 lg:inline-flex lg:w-auto"
               >
                 <Pencil size={14} /> Edit
               </button>
@@ -370,30 +370,30 @@ export default function ProfilePage() {
             </div>
 
             {/* Details Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 pt-2">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-7 2xl:gap-x-32">
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">First Name</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{firstName || "—"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">First Name</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{firstName || "—"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Last Name</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{lastName || "—"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Last Name</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{lastName || "—"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Email address</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Email address</span>
                 <span className="text-sm font-semibold text-gray-900 dark:text-white break-all">{user?.email || "—"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Phone</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.phone || "—"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Phone</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{user?.phone || "—"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Bio</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.zalo || "Team Member"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Bio</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{user?.zalo || "Team Member"}</span>
               </div>
 
               <div>
@@ -416,64 +416,63 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* CARD 2: ADDRESS & IDENTIFICATION */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03] space-y-6 shadow-xs">
-            <div className="flex items-center justify-between border-b border-gray-100 dark:border-gray-800/60 pb-4">
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">Address & Identification</h3>
+          <div className="border-t border-gray-100 p-5 dark:border-gray-800 lg:p-6">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between mb-6">
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-white/90">Address & Identification</h4>
               <button
                 onClick={() => {
                   setActiveTab('cccd');
                   setIsEditing(true);
                 }}
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer"
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200 lg:inline-flex lg:w-auto"
               >
                 <Pencil size={14} /> Edit
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-7 2xl:gap-x-32">
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Số Căn cước (CCCD)</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.cccd || "Chưa cập nhật / Chưa quét"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Số Căn cước (CCCD)</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{user?.cccd || "Chưa cập nhật / Chưa quét"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Giới tính</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.gender || "Nam"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Giới tính</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{user?.gender || "Nam"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Ngày sinh</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.dob || "Chưa cập nhật"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Ngày sinh</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{user?.dob || "Chưa cập nhật"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Ngày cấp CCCD</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.issue_date || "Chưa cập nhật"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Ngày cấp CCCD</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{user?.issue_date || "Chưa cập nhật"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Nơi thường trú (Địa chỉ)</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.address || "Chưa cập nhật"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Nơi thường trú (Địa chỉ)</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{user?.address || "Chưa cập nhật"}</span>
               </div>
 
               <div>
-                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">Nơi cấp</span>
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.issue_place || "Cục Cảnh sát QLHC về TTXH"}</span>
+                <span className="mb-2 block text-xs leading-normal text-gray-500 dark:text-gray-400">Nơi cấp</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-white/90">{user?.issue_place || "Cục Cảnh sát QLHC về TTXH"}</span>
               </div>
             </div>
           </div>
 
           {/* CARD 3: MY ECARDS */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03] space-y-6 shadow-xs">
-            <div className="flex items-center justify-between border-b border-gray-100 dark:border-gray-800/60 pb-4">
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">My Ecards</h3>
+          <div className="p-5 border border-gray-200 rounded-2xl dark:border-gray-800 lg:p-6 bg-white dark:bg-white/[0.03]">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between mb-6">
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-white/90">My Ecards</h4>
               <button
                 onClick={() => {
                   setActiveTab('ecards');
                   setIsEditing(true);
                 }}
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer"
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200 lg:inline-flex lg:w-auto"
               >
                 <Pencil size={14} /> Edit
               </button>
@@ -528,7 +527,9 @@ export default function ProfilePage() {
           </div>
 
         </div>
-      ) : (
+          </div>
+        )
+      : (
         /* EDIT MODE: Functional Editors Tab Screen */
         <div className="space-y-6 animate-fade-in-up">
           <div className="flex justify-between items-center">
@@ -636,7 +637,7 @@ export default function ProfilePage() {
                       <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Họ và tên thành viên</label>
                       <input
                         type="text"
-                        className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500 disabled:opacity-60"
+                        className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800 disabled:opacity-60"
                         value={profileForm.name}
                         onChange={(e) => setProfileForm({ ...profileForm, name: e.target.value })}
                         disabled={!isEditingProfile}
@@ -648,7 +649,7 @@ export default function ProfilePage() {
                       <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Địa chỉ Email đăng nhập (Không thể thay đổi)</label>
                       <input
                         type="email"
-                        className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500 disabled:opacity-50 bg-gray-50 dark:bg-white/[0.02]"
+                        className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800 disabled:opacity-50 bg-gray-50 dark:bg-white/[0.02]"
                         value={profileForm.email}
                         disabled
                       />
@@ -659,7 +660,7 @@ export default function ProfilePage() {
                         <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Số điện thoại liên hệ</label>
                         <input
                           type="tel"
-                          className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500 disabled:opacity-60"
+                          className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800 disabled:opacity-60"
                           value={profileForm.phone}
                           onChange={(e) => setProfileForm({ ...profileForm, phone: e.target.value })}
                           disabled={!isEditingProfile}
@@ -669,7 +670,7 @@ export default function ProfilePage() {
                         <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Zalo ID hoặc Link liên hệ</label>
                         <input
                           type="text"
-                          className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500 disabled:opacity-60"
+                          className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800 disabled:opacity-60"
                           value={profileForm.zalo}
                           onChange={(e) => setProfileForm({ ...profileForm, zalo: e.target.value })}
                           disabled={!isEditingProfile}
@@ -680,7 +681,7 @@ export default function ProfilePage() {
                     {isEditingProfile && (
                       <button
                         type="submit"
-                        className="flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition-all cursor-pointer shadow-md shadow-brand-500/20"
+                        className="flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition-all cursor-pointer shadow-theme-xs"
                       >
                         Lưu thông tin cá nhân
                       </button>
@@ -714,7 +715,7 @@ export default function ProfilePage() {
                           <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Số CCCD</label>
                           <input
                             type="text"
-                            className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                            className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                             placeholder="Số CCCD gồm 12 chữ số"
                             maxLength={15}
                             value={cccdForm.cccd}
@@ -727,7 +728,7 @@ export default function ProfilePage() {
                           <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Họ và tên trên CCCD</label>
                           <input
                             type="text"
-                            className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                            className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                             placeholder="NGUYỄN VĂN A"
                             value={cccdForm.name}
                             onChange={(e) => setCccdForm({ ...cccdForm, name: e.target.value.toUpperCase() })}
@@ -738,7 +739,7 @@ export default function ProfilePage() {
                         <div>
                           <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Giới tính</label>
                           <select
-                            className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500 dark:bg-gray-900 bg-white"
+                            className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800 dark:bg-gray-900 bg-white"
                             value={cccdForm.gender}
                             onChange={(e) => setCccdForm({ ...cccdForm, gender: e.target.value })}
                           >
@@ -751,7 +752,7 @@ export default function ProfilePage() {
                           <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Ngày sinh</label>
                           <input
                             type="text"
-                            className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                            className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                             placeholder="DD/MM/YYYY (Ví dụ: 15/08/1995)"
                             value={cccdForm.dob}
                             onChange={(e) => setCccdForm({ ...cccdForm, dob: e.target.value })}
@@ -761,7 +762,7 @@ export default function ProfilePage() {
                         <div className="md:col-span-2">
                           <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Nơi thường trú</label>
                           <textarea
-                            className="w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                            className="w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                             placeholder="Địa chỉ ghi trên thẻ CCCD"
                             rows={2}
                             value={cccdForm.address}
@@ -773,7 +774,7 @@ export default function ProfilePage() {
                           <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Ngày cấp</label>
                           <input
                             type="text"
-                            className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                            className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                             placeholder="DD/MM/YYYY (Ví dụ: 20/10/2021)"
                             value={cccdForm.issue_date}
                             onChange={(e) => setCccdForm({ ...cccdForm, issue_date: e.target.value })}
@@ -784,7 +785,7 @@ export default function ProfilePage() {
                           <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Nơi cấp</label>
                           <input
                             type="text"
-                            className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                            className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                             placeholder="Cục Cảnh sát QLHC về TTXH"
                             value={cccdForm.issue_place}
                             onChange={(e) => setCccdForm({ ...cccdForm, issue_place: e.target.value })}
@@ -794,7 +795,7 @@ export default function ProfilePage() {
 
                       <button
                         type="submit"
-                        className="flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition-all cursor-pointer shadow-md shadow-brand-500/20"
+                        className="flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition-all cursor-pointer shadow-theme-xs"
                         disabled={isSavingCccd}
                       >
                         {isSavingCccd ? (
@@ -882,7 +883,7 @@ export default function ProfilePage() {
                       <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Mật khẩu hiện tại</label>
                       <input
                         type="password"
-                        className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                        className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                         placeholder="••••••••"
                         value={passwordForm.old_password}
                         onChange={(e) => setPasswordForm({ ...passwordForm, old_password: e.target.value })}
@@ -894,7 +895,7 @@ export default function ProfilePage() {
                       <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Mật khẩu mới</label>
                       <input
                         type="password"
-                        className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                        className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                         placeholder="••••••••"
                         value={passwordForm.new_password}
                         onChange={(e) => setPasswordForm({ ...passwordForm, new_password: e.target.value })}
@@ -906,7 +907,7 @@ export default function ProfilePage() {
                       <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">Xác nhận mật khẩu mới</label>
                       <input
                         type="password"
-                        className="h-11 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:border-brand-300 focus:outline-none dark:border-gray-800 dark:text-white/90 dark:focus:border-brand-500"
+                        className="h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 focus:border-brand-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800"
                         placeholder="••••••••"
                         value={passwordForm.new_password_confirmation}
                         onChange={(e) => setPasswordForm({ ...passwordForm, new_password_confirmation: e.target.value })}
@@ -916,7 +917,7 @@ export default function ProfilePage() {
 
                     <button
                       type="submit"
-                      className="flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition-all cursor-pointer shadow-md shadow-brand-500/20"
+                      className="flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition-all cursor-pointer shadow-theme-xs"
                       disabled={isChangingPass}
                     >
                       {isChangingPass ? (
@@ -999,7 +1000,7 @@ export default function ProfilePage() {
             <h4 className="font-bold text-gray-900 dark:text-white text-base">Mã QR Ecard thành viên</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400">Quét để truy cập ngay Ecard cá nhân của {qrModalCard.lastname} {qrModalCard.firstname}.</p>
             
-            <div className="p-3 bg-white border border-gray-100 rounded-2xl">
+            <div className="p-3 bg-white border border-gray-100 dark:bg-gray-900 dark:border-gray-800 rounded-2xl">
               <i className="fa-solid fa-qrcode text-9xl text-brand-600"></i>
             </div>
             

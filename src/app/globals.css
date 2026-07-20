@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-@import 'tailwindcss' source('../**/*.{js,ts,jsx,tsx}');
+@import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-*: initial;
-  --font-outfit: Outfit, sans-serif;
+  --font-outfit: var(--font-outfit), sans-serif;
+  --font-sans: var(--font-outfit), sans-serif;
 
   --breakpoint-*: initial;
   --breakpoint-2xsm: 375px;
@@ -190,7 +191,7 @@
     cursor: pointer;
   }
   body {
-    @apply relative font-normal font-outfit z-1 bg-gray-50;
+    @apply relative font-normal font-outfit z-1 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white/90;
   }
 }
 
@@ -818,20 +819,9 @@ span.flatpickr-weekday,
   --text-dim: #94a3b8;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-sans);
-}
 
-html, body {
-  background-color: var(--bg-app);
-  color: var(--text-main);
-  min-height: 100vh;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
+
+
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -888,11 +878,7 @@ body::after {
 }
 
 /* Typography styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
+
 
 /* Premium Buttons */
 .btn-premium {
