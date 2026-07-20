@@ -1,7 +1,7 @@
 import os
 
-TAILADMIN_CSS_PATH = r"e:\Ecard\free-nextjs-admin-dashboard-main\free-nextjs-admin-dashboard-main\src\app\globals.css"
-ORIGINAL_CSS_PATH = r"e:\Ecard\src\app\globals.css"
+TAILADMIN_CSS_PATH = r"d:\SeCard\free-nextjs-admin-dashboard-main\free-nextjs-admin-dashboard-main\src\app\globals.css"
+ORIGINAL_CSS_PATH = r"d:\SeCard\src\app\globals.css"
 
 with open(TAILADMIN_CSS_PATH, "r", encoding="utf-8") as f:
     tailadmin_css = f.read()
@@ -9,14 +9,17 @@ with open(TAILADMIN_CSS_PATH, "r", encoding="utf-8") as f:
 with open(ORIGINAL_CSS_PATH, "r", encoding="utf-8") as f:
     original_css = f.read()
 
-# We want to extract our font imports, :root variables, and light theme variables, and append them.
+# If the custom overrides block already exists in original_css, let's extract just that part
+custom_separator = "/* ================= CUSTOM ECARD OVERRIDES ================= */"
+if custom_separator in original_css:
+    custom_part = original_css.split(custom_separator)[1].strip()
+else:
+    custom_part = original_css
+
 # The original font imports:
 font_imports = "@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');\n\n"
 
-# The rest of our custom classes / overrides.
-# Let's append original CSS variables and customizations.
-# Note that Tailwind v4 has its own colors, but we want to make sure ours are defined so old styles still work.
-combined_css = font_imports + tailadmin_css + "\n\n/* ================= CUSTOM ECARD OVERRIDES ================= */\n" + original_css
+combined_css = font_imports + tailadmin_css + "\n\n/* ================= CUSTOM ECARD OVERRIDES ================= */\n\n" + custom_part
 
 with open(ORIGINAL_CSS_PATH, "w", encoding="utf-8") as f:
     f.write(combined_css)
