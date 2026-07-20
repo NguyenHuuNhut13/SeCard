@@ -187,7 +187,7 @@ END:VCARD`;
           <div className={styles.avatarWrapper}>
             <img
               src={getAvatarUrl(card.avatar)}
-              alt={`${card.firstname} ${card.lastname}`}
+              alt={`${card.lastname} ${card.firstname}`}
               className={styles.avatarImage}
               onError={(e) => {
                 (e.target as HTMLImageElement).src =
@@ -199,7 +199,7 @@ END:VCARD`;
 
         {/* User Info */}
         <div className={styles.profileInfo}>
-          <h2 className={styles.fullName}>{card.firstname} {card.lastname}</h2>
+          <h2 className={styles.fullName}>{card.lastname} {card.firstname}</h2>
           <div className={styles.position}>{card.position || 'Chuyên viên'}</div>
           <div className={styles.company}>{card.company || 'NKS'}</div>
           {card.slogan && <p className={styles.slogan}>"{card.slogan}"</p>}

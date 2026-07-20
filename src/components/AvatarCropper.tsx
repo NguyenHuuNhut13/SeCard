@@ -10,11 +10,13 @@ interface AvatarCropperProps {
   imageSrc: string;
   onCropComplete: (base64Data: string) => void;
   onClose: () => void;
+  aspectRatio?: number;
+  title?: string;
 }
 
 type FilterType = 'none' | 'brighten' | 'grayscale' | 'sepia' | 'warm' | 'cool';
 
-export default function AvatarCropper({ imageSrc, onCropComplete, onClose }: AvatarCropperProps) {
+export default function AvatarCropper({ imageSrc, onCropComplete, onClose, aspectRatio = 1, title = 'Cắt ảnh đại diện' }: AvatarCropperProps) {
   const [selectedFilter, setSelectedFilter] = useState<FilterType>('none');
   const imageRef = useRef<HTMLImageElement>(null);
   const cropperRef = useRef<Cropper | null>(null);
@@ -22,7 +24,7 @@ export default function AvatarCropper({ imageSrc, onCropComplete, onClose }: Ava
   useEffect(() => {
     if (imageRef.current) {
       cropperRef.current = new Cropper(imageRef.current, {
-        aspectRatio: 1,
+        aspectRatio: aspectRatio,
         viewMode: 1,
         dragMode: 'move',
         autoCropArea: 0.8,
@@ -80,10 +82,12 @@ export default function AvatarCropper({ imageSrc, onCropComplete, onClose }: Ava
   const handleSubmit = () => {
     if (!cropperRef.current) return;
 
-    // 1. Crop canvas to 500x500px square
+    // 1. Crop canvas based on aspect ratio
+    const width = aspectRatio && aspectRatio !== 1 ? 800 : 500;
+    const height = aspectRatio && aspectRatio !== 1 ? Math.round(800 / aspectRatio) : 500;
     const canvas = cropperRef.current.getCroppedCanvas({
-      width: 500,
-      height: 500,
+      width,
+      height,
       imageSmoothingEnabled: true,
       imageSmoothingQuality: 'high',
     });
@@ -143,7 +147,7 @@ export default function AvatarCropper({ imageSrc, onCropComplete, onClose }: Ava
       <div className={styles.modalContent}>
         {/* Header */}
         <div className={styles.modalHeader}>
-          <h3>Cắt ảnh đại diện</h3>
+          <h3>{title}</h3>
           <button type="button" className={styles.closeBtn} onClick={onClose}>
             <X size={20} />
           </button>

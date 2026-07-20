@@ -347,13 +347,12 @@ export const CompanyApiService = {
    */
   async updateEcardAvatar(token: string, code: string, base64Image: string) {
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch('https://account.nks.vn/api/nks/user/ecard/updateAvatar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          type: 'avatar',
-          code,
-          image: base64Image,
+          code: code,
+          avatar: base64Image,
           access_token: token,
         }),
       });
@@ -386,13 +385,12 @@ export const CompanyApiService = {
    */
   async updateEcardBanner(token: string, code: string, base64Image: string) {
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch('https://account.nks.vn/api/nks/user/ecard/updateBanner', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          type: 'banner',
-          code,
-          image: base64Image,
+          code: code,
+          banner: base64Image,
           access_token: token,
         }),
       });
